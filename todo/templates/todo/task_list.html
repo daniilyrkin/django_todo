@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Список тасок</title>
+</head>
+<body>
+    <h1>Список тасок</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.task }}</li>
+            <form action="{% url 'task_delete' task.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Удалить</button>
+            </form>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'task_create' %}">Создать</a>
+</body>
+</html>

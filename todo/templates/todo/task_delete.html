@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Удалить таску</title>
+</head>
+<body>
+    <h1>Удалить тасочку</h1>
+    <p> Ты хочешь удалить "{{ task.task }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type='submit'>Да</button>
+    </form>
+</body>
+</html>
